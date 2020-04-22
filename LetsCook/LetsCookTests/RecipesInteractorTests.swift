@@ -28,4 +28,17 @@ class RecipesInteractorTests: XCTestCase {
 
         XCTAssertNotNil(recipeInteractor)
     }
+
+    func testNetworkWorkerGetRecipes() {
+        let networkWorker = NetworkWorker()
+        let expectation = self.expectation(description: "async expecation")
+
+        XCTAssertNotNil(networkWorker)
+
+        networkWorker.getRecipes { (recipes: [Recipe]) in
+            expectation.fulfill()
+        }
+
+        self.waitForExpectations(timeout: 10, handler: nil)
+    }
 }
