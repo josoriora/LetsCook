@@ -1,2 +1,2 @@
 # LetsCook
-Lets cook
+Lets cook app.
