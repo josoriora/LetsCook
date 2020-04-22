@@ -22,6 +22,10 @@ class RecipesInteractorTests: XCTestCase {
     func testRecipeInteractorCreation() {
         let recipeInteractor = RecipeInteractorImpl()
 
+        recipeInteractor.getRecipes { (recipes: [Recipe]) in
+
+        }
+
         XCTAssertNotNil(recipeInteractor)
     }
 }

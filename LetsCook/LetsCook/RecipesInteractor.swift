@@ -9,9 +9,11 @@
 import Foundation
 
 protocol RecipesInteractor {
-
+    func getRecipes(completion: ([Recipe]) -> Void)
 }
 
 class RecipeInteractorImpl: RecipesInteractor {
+    func getRecipes(completion: ([Recipe]) -> Void) {
 
+    }
 }
