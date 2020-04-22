@@ -9,11 +9,11 @@
 import Foundation
 
 protocol RecipesInteractor {
-    func getRecipes(completion: @escaping ([Recipe]) -> Void)
+    func getRecipes(completion: @escaping ([Recipe]?) -> Void)
 }
 
 class RecipeInteractorImpl: RecipesInteractor {
-    func getRecipes(completion: @escaping ([Recipe]) -> Void) {
+    func getRecipes(completion: @escaping ([Recipe]?) -> Void) {
 
     }
 }

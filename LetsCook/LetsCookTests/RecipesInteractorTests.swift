@@ -22,7 +22,7 @@ class RecipesInteractorTests: XCTestCase {
     func testRecipeInteractorCreation() {
         let recipeInteractor = RecipeInteractorImpl()
 
-        recipeInteractor.getRecipes { (recipes: [Recipe]) in
+        recipeInteractor.getRecipes { (recipes: [Recipe]?) in
 
         }
 
@@ -35,7 +35,8 @@ class RecipesInteractorTests: XCTestCase {
 
         XCTAssertNotNil(networkWorker)
 
-        networkWorker.getRecipes { (recipes: [Recipe]) in
+        networkWorker.getRecipes { (recipes: [Recipe]?, error: Error?) in
+            XCTAssertTrue(recipes?.count ?? 0 > 0)
             expectation.fulfill()
         }
 
