@@ -11,3 +11,7 @@ import Foundation
 protocol Recipe {
     
 }
+
+struct RecipeAdapter : Recipe {
+    
+}

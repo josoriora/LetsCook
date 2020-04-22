@@ -9,7 +9,15 @@
 import Foundation
 
 class NetworkWorker: RecipesInteractor {
-    func getRecipes(completion: ([Recipe]) -> Void) {
+    func getRecipes(completion: @escaping ([Recipe]) -> Void) {
+        let session = URLSession.shared
+        let url = URL(string: "http://gl-endpoint.herokuapp.com/recipes")!
 
+        let task = session.dataTask(with: url, completionHandler: { data, response, error in
+
+            completion([RecipeAdapter()])
+        })
+
+        task.resume()
     }
 }
